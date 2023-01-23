@@ -4,7 +4,7 @@ import React from "react";
 // importing react component.
 
 // importing styles.
-import "../scss/Category.scss";
+import "../styles/Category.css";
 
 const Category = ({ category }) => {
 	const { imageUrl, title } = category;

@@ -5,7 +5,7 @@ import React from 'react';
 import Category from './Category';
 
 // importing styles.
-import "../scss/Categories.scss";
+import "../styles/Categories.css";
 
 // Categories component.
 function Categories({ categories }) {
