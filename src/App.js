@@ -1,13 +1,8 @@
-// importing react. 
-import React from "react";
+import React from 'react';
+import Category from './components/Categories';
 
-// importing react component.
-import Categories from "./components/Categories";
-
-function App() {
-
-  // categories
-  const categories = [
+const App = () => {
+	const categories = [
 		{
 			id: 1,
 			title: "hats",
@@ -35,18 +30,7 @@ function App() {
 		},
 	];
 
-  return (
-
-    <>
-    
-      {/* Categories */}
-      <Categories  categories={categories} />
-
-    </>
-    
-  );
-
+	return <Category categories={categories} />;
 };
 
-// exporting App component.
 export default App;

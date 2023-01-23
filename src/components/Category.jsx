@@ -1,12 +1,7 @@
-// importing react.
-import React from "react";
-
-// importing react component.
-
-// importing styles.
+import React from 'react';
 import "../styles/Category.css";
 
-const Category = ({ category }) => {
+const CategoryItem = ({ category }) => {
 	const { imageUrl, title } = category;
 	return (
 		<div className="category-container">
@@ -24,5 +19,4 @@ const Category = ({ category }) => {
 	);
 };
 
-// exporting App component.
-export default Category;
+export default CategoryItem;

@@ -1,35 +1,16 @@
-// importing react.
 import React from 'react';
+import CategoryItem from "../components/Category";
 
-// importing components.
-import Category from './Category';
-
-// importing styles.
 import "../styles/Categories.css";
 
-// Categories component.
-function Categories({ categories }) {
-
-    
-
-    return (
-
-        <>
-        
-            {/* Categories */}
-            <div className="categories-container">
-                { categories.map((category) => (
-                    
-                    <Category key={category.id} category={category} />
-
-                )) }
-            </div>
-
-        </>
-
-    );
-
+const Category = ({ categories }) => {
+	return (
+		<div className="categories-container">
+			{categories.map((category) => (
+				<CategoryItem key={category.id} category={category} />
+			))}
+		</div>
+	);
 };
 
-// exporting Categories component.
-export default Categories;
+export default Category;
