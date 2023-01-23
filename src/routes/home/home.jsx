@@ -1,6 +1,5 @@
 // importing react modules.
 import React from "react";
-import { Outlet } from "react-router-dom";
 import Category from "../../components/Categories";
 
 const Home = () => {
@@ -36,7 +35,6 @@ const Home = () => {
 
         <>
             <Category categories={categories} />;
-            <Outlet />
         </>
 
     ) 
