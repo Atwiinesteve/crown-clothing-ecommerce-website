@@ -3,7 +3,7 @@ import React, {Fragment} from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 // navbar styles.
-
+import "../navigation/navigation.css"
 
 // navbar component
 function Navbar() {
