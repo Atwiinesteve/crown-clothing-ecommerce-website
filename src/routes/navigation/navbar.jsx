@@ -20,10 +20,10 @@ function Navbar() {
 				</div>
 				<div className="nav-links-container">
 					<Link className="nav-link" to="/shop">
-						Shop
+						SHOP
 					</Link>
-					<Link className="nav-link" to="/signin">
-						Signin
+					<Link className="nav-link" to="/sign-in">
+						SIGNIN
 					</Link>
 				</div>
 			</nav>
