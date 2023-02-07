@@ -5,7 +5,7 @@ import { Routes, Route } from 'react-router-dom';
 // importing routes
 import Home from './routes/home/home';
 import Navbar from './routes/navigation/navbar';
-import Signin from './components/Signin';
+import Signin from './components/Authentication';
 
 const Shop = () => {
 	return <h1>I am a Shop</h1>
