@@ -34,19 +34,15 @@ const Categories = () => {
 
 	return (
 		<div className="categories-container">
-
 			{categories.map((category) => (
-
-				<div className="category-container">
-					<img className="background-image" key={category.id} src={category.imageUrl} alt="" />
+				<div key={category.id} className="category-container">
+					<img className="background-image" src={category.imageUrl} alt="" />
 					<div className="category-body">
 						<h2>{category.title}</h2>
 						<p>Shop Now</p>
 					</div>
 				</div>
-
 			))}
-
 		</div>
 	);
 };
