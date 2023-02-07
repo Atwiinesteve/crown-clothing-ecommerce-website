@@ -3,7 +3,7 @@ import React, { useState } from "react";
 
 // importing utils
 import {
-	createUserAAuthWithEmailAndPassword,
+	createAuthUserWithEmailAndPassword,
 	createUserDocumentFromAuth,
 } from "../utils/firebase/firebase.utils";
 
@@ -42,7 +42,7 @@ export const Signup = () => {
 			return;
 		}
 		try {
-			const { user } = await createUserAAuthWithEmailAndPassword(
+			const { user } = await createAuthUserWithEmailAndPassword(
 				email,
 				password,
 			);
