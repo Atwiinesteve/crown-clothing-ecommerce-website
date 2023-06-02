@@ -9,11 +9,6 @@ function Signin() {
 
 	return (
 		<div className="authentication-page">
-			{/* <button onClick={logGoogleUser}>Sign in with Google Popup</button>
-			<button onClick={() => signInWithGoogleRedirect()}>
-				Sign in with Google Redirect
-			</button> */}
-
 			<SignInForm />
 			<Signup />
 		</div>

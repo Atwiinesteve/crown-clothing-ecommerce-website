@@ -37,7 +37,7 @@ const SignInForm = () => {
 				email,
 				password,
 			);
-			console.log(response);
+			// console.log(response);
 			resetFormFields();
 		} catch (error) {
 			switch (error.code) {
@@ -85,9 +85,17 @@ const SignInForm = () => {
 					display: "flex"
 				}}>
 					<Button type="submit">Sign In</Button>
-					<Button type="button" buttonType="google" onClick={signInWithGoogle}>
+					<button type="button" style={{
+						padding: '1rem',
+						fontWeight: 'bolder',
+						textTransform: 'uppercase',
+						backgroundColor: 'blue',
+						color: 'white',
+						cursor: 'pointer',
+						border: 'none',
+					}} onClick={signInWithGoogle}>
 						Google sign in
-					</Button>
+					</button>
 				</div>
 			</form>
 		</div>
