@@ -1,12 +1,17 @@
 // importing react
-import React, {Fragment} from 'react';
+import React, {Fragment, useContext} from 'react';
 import { Outlet, Link } from 'react-router-dom';
 
 // navbar styles.
-import "../navigation/navigation.css"
+import "../navigation/navigation.css";
+
+// import context
+import {UserContext} from '../../context/user.context';
 
 // navbar component
 function Navbar() {
+	const {currentUser} = useContext(UserContext);
+	console.log(currentUser)
   return (
 		<Fragment>
 			<nav className="navigation">
