@@ -11,7 +11,7 @@ import {
 	GoogleAuthProvider,
 } from "firebase/auth";
 
-// firebase file util functions
+// firebase/firestore file util functions
 import { getFirestore, doc, getDoc, setDoc } from "firebase/firestore";
 
 // Your web app's Firebase configuration
@@ -37,6 +37,12 @@ export const signInWithGooglePopup = () =>
 	signInWithPopup(auth, googleProvider);
 export const signInWithGoogleRedirect = () =>
 	signInWithRedirect(auth, googleProvider);
+
+
+
+// ===============================================
+// firestore methods
+// ===============================================
 
 export const db = getFirestore();
 
