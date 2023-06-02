@@ -1,7 +1,7 @@
 import { useState } from "react";
 
-import FormInput from "../form-input/form-input.component";
-import Button from "../button/button.component";
+import {FormInput} from "../components/FormInput";
+import {Button} from "../components/Button";
 
 import {
 	signInWithGooglePopup,
@@ -81,7 +81,9 @@ const SignInForm = () => {
 					name="password"
 					value={password}
 				/>
-				<div className="buttons-container">
+				<div className="buttons-container" style={{
+					display: "flex"
+				}}>
 					<Button type="submit">Sign In</Button>
 					<Button type="button" buttonType="google" onClick={signInWithGoogle}>
 						Google sign in
