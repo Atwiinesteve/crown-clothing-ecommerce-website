@@ -9,6 +9,7 @@ import {
 	signInWithPopup,
 	signInWithEmailAndPassword,
 	GoogleAuthProvider,
+	signOut
 } from "firebase/auth";
 
 // firebase/firestore file util functions
@@ -86,3 +87,6 @@ export const signInAuthUserWithEmailAndPassword = async (email, password) => {
 
 	return await signInWithEmailAndPassword(auth, email, password);
 };
+
+// signout user
+export const signOutUser = async () => await signOut(auth);

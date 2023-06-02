@@ -1,5 +1,5 @@
 // importing react
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 
 // importing utils
 import {
@@ -11,6 +11,7 @@ import {
 import "../styles/Signup.css";
 import { FormInput } from "./FormInput";
 import { Button } from "./Button";
+import { UserContext } from "../context/user.context";
 
 // default form values
 const defaultFormValues = {
@@ -24,6 +25,8 @@ const defaultFormValues = {
 const Signup = () => {
 	const [formFields, setFormFields] = useState(defaultFormValues);
 	const { displayName, email, password, confirmPassword } = formFields;
+
+	const {setCurrentUser} = useContext(UserContext);
 
 	const handleChange = (event) => {
 		const { name, value } = event.target;
@@ -42,10 +45,8 @@ const Signup = () => {
 			return;
 		}
 		try {
-			const { user } = await createAuthUserWithEmailAndPassword(
-				email,
-				password,
-			);
+			const { user } = await createAuthUserWithEmailAndPassword(email,password);
+			setCurrentUser(user);
 			await createUserDocumentFromAuth(user, { displayName });
 			resetForm();
 		} catch (error) {
