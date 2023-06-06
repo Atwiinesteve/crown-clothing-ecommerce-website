@@ -13,6 +13,7 @@ export default function CartIcon() {
         <div classname='cart-icon-container'>
             <img width={'33px'} height={'33px'} style={{
                 position: 'relative',
+                cursor: 'pointer'
             }} src={ShoppingCartIcon} classname='shopping-icon' />
             <span style={{
                 position: 'absolute',
@@ -21,7 +22,8 @@ export default function CartIcon() {
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
-                fontSize: '0.8rem'
+                fontSize: '0.8rem',
+                cursor: 'pointer'
             }} className='item-count'>0</span>
         </div>
     )
