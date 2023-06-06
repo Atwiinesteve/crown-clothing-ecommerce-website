@@ -11,18 +11,16 @@ import ProductCard from './ProductCard';
 import { ProductsContext } from '../context/products.context';
 
 // shop component
-export default function Shop() {
-
-    // products
-    const {products} = useContext(ProductsContext);
-
+const Shop = () => {
+    const { products } = useContext(ProductsContext);
+  
     return (
-        <>
-            <div>
-                {products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
-                ))}
-            </div>
-        </>
-    )
-};
+      <div className='products-container'>
+        {products.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+      </div>
+    );
+  };
+  
+  export default Shop;
