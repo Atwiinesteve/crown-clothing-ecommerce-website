@@ -9,6 +9,7 @@ import "../navigation/navigation.css";
 import { UserContext } from "../../context/user.context";
 import { signOutUser } from "../../utils/firebase/firebase.utils";
 import CartIcon from "../../components/CartIcon";
+import DropDownComponent from "../../components/CartDropDown";
 
 // navbar component
 function Navbar() {
@@ -46,6 +47,7 @@ function Navbar() {
 					)}
 					<CartIcon />
 				</div>
+				<DropDownComponent />
 			</nav>
 			<Outlet />
 		</Fragment>
