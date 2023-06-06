@@ -1,24 +1,25 @@
 // importing react
-import React, {Fragment, useContext} from 'react';
-import { Outlet, Link } from 'react-router-dom';
+import React, { Fragment, useContext } from "react";
+import { Outlet, Link } from "react-router-dom";
 
 // navbar styles.
 import "../navigation/navigation.css";
 
 // import context
-import {UserContext} from '../../context/user.context';
-import { signOutUser } from '../../utils/firebase/firebase.utils';
+import { UserContext } from "../../context/user.context";
+import { signOutUser } from "../../utils/firebase/firebase.utils";
+import CartIcon from "../../components/CartIcon";
 
 // navbar component
 function Navbar() {
-	const {currentUser} = useContext(UserContext);
+	const { currentUser } = useContext(UserContext);
 
 	// const signOutHandler = async () => {
 	// 	await signOutUser();
 	// 	setCurrentUser(null);
 	// };
-	
-  return (
+
+	return (
 		<Fragment>
 			<nav className="navigation">
 				<div className="logo-container">
@@ -34,14 +35,16 @@ function Navbar() {
 						SHOP
 					</Link>
 
-					{ 
-						currentUser ? (<Link onClick={signOutUser} className="nav-link">
+					{currentUser ? (
+						<Link onClick={signOutUser} className="nav-link">
 							SIGNOUT
-						</Link>) : (<Link className="nav-link" to="/sign-in">
+						</Link>
+					) : (
+						<Link className="nav-link" to="/sign-in">
 							SIGNIN
-						</Link>) }
-
-					
+						</Link>
+					)}
+					<CartIcon />
 				</div>
 			</nav>
 			<Outlet />
