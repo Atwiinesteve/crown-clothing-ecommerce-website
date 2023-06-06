@@ -1,15 +1,20 @@
 .navigation {
-  height: 70px;
+  position: fixed;
+  top: -5px;
+  left: 0;
+  height: 6vh;
   width: 100%;
   display: flex;
+  align-items: center;
   justify-content: space-between;
   margin-bottom: 25px;
+  z-index: 10;
+  background: white;
 }
 
 .navigation .logo-container {
-    height: 100%;
-    width: 70px;
-    padding: 25px;
+    height: 50px;
+    width: 50px;
 }
 
 .navigation .nav-links-container {

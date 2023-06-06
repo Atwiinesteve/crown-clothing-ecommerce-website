@@ -10,15 +10,24 @@ import ProductCard from './ProductCard';
 // products context
 import { ProductsContext } from '../context/products.context';
 
+// import styles
+import "../styles/ProductCard.css";
+
 // shop component
 const Shop = () => {
     const { products } = useContext(ProductsContext);
   
     return (
-      <div className='products-container'>
-        {products.map((product) => (
-          <ProductCard key={product.id} product={product} />
-        ))}
+      <div style={{
+        display: 'grid',
+        gridTemplateColumns: 'repeat(4, 1fr)',
+        columnGap: '10px',
+        rowGap: '50px',
+        marginTop: '90px'
+      }}>
+        { products.map((product) => (
+          <ProductCard product={product} key={Math.random()} />
+        )) }
       </div>
     );
   };
