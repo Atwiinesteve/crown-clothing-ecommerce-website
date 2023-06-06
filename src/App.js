@@ -6,10 +6,7 @@ import { Routes, Route } from 'react-router-dom';
 import Home from './routes/home/home';
 import Navbar from './routes/navigation/navbar';
 import Signin from './components/Authentication';
-
-const Shop = () => {
-	return <h1>I am a Shop</h1>
-}
+import Shop from './components/Shop';
 
 const App = () => {
 	return (
