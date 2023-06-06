@@ -10,7 +10,7 @@ import {
 // importing styles
 import "../styles/Signup.css";
 import { FormInput } from "./FormInput";
-import { Button } from "./Button";
+import  Button  from "./Button";
 import { UserContext } from "../context/user.context";
 
 // default form values
