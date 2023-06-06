@@ -4,6 +4,9 @@ import React from 'react';
 // import dummy CONTEXT data
 import {useContext} from 'react';
 
+// import components
+import ProductCard from './ProductCard';
+
 // products context
 import { ProductsContext } from '../context/products.context';
 
@@ -16,10 +19,8 @@ export default function Shop() {
     return (
         <>
             <div>
-                {products.map(({ id, name }) => (
-                    <div key={id}>
-                        <h1>{name}</h1>
-                    </div>
+                {products.map((product) => (
+                    <ProductCard key={product.id} product={product} />
                 ))}
             </div>
         </>
