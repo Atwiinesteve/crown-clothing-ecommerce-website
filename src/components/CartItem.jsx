@@ -4,19 +4,22 @@ import React from 'react';
 // context
 // import { cartContext } from '../context/cart.context';
 
-// // import styles
-// import '../styles/CartIcon.css';
+// import styles
+import "../styles/CartItem.css"
 
 
 // cart component
 export default function CartItem({ cartItem }) {
 
-    const { name, quantity } = cartItem;
+    const { name, imageUrl, price, quantity } = cartItem;
 
     return(
         <div className='cart-item-container'>
-            <h6>{name}</h6>
-            <h6>{quantity}</h6>
+            <img src={imageUrl} alt={`${name}` }/>
+            <div className="item-details">
+                <span className="name">{name}</span>
+                <span className="price">{quantity} x {price}</span>
+            </div>
         </div>
     )
 };
