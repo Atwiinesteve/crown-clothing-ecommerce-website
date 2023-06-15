@@ -7,14 +7,19 @@ import "../navigation/navigation.css";
 
 // import context
 import { UserContext } from "../../context/user.context";
+import { cartContext } from "../../context/cart.context";
+
+// firebase
 import { signOutUser } from "../../utils/firebase/firebase.utils";
+
+// components
 import CartIcon from "../../components/CartIcon";
-// import DropDownComponent from "../../components/CartDropDown";
 import DropDownCard from "../../components/CartDropDown";
 
 // navbar component
 function Navbar() {
 	const { currentUser } = useContext(UserContext);
+	const { isCartOpen } = useContext(cartContext);
 
 	// const signOutHandler = async () => {
 	// 	await signOutUser();
@@ -48,7 +53,7 @@ function Navbar() {
 					)}
 					<CartIcon />
 				</div>
-				<DropDownCard />
+				{ isCartOpen && <DropDownCard />}
 			</nav>
 			<Outlet />
 		</Fragment>

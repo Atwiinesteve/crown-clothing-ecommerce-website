@@ -1,5 +1,8 @@
 // import react
-import React from 'react';
+import React, {useContext} from 'react';
+
+// context
+import { cartContext } from '../context/cart.context';
 
 // import styles
 import '../styles/CartIcon.css';
@@ -9,12 +12,17 @@ import ShoppingCartIcon from '../assets/shopping-bag.svg';
 
 // cart component
 export default function CartIcon() {
+
+    const { isCartOpen, setIsCartOpen } = useContext(cartContext)
+
+    const toggleCart = () => setIsCartOpen(!isCartOpen)
+
     return(
         <div classname='cart-icon-container'>
-            <img width={'33px'} height={'33px'} style={{
+            <img onClick={toggleCart} width={'33px'} height={'33px'} style={{
                 position: 'relative',
                 cursor: 'pointer'
-            }} src={ShoppingCartIcon} classname='shopping-icon' />
+            }} src={ShoppingCartIcon} classname='shopping-icon' alt='icon' />
             <span style={{
                 position: 'absolute',
                 top: '19px',
