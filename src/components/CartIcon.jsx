@@ -18,11 +18,11 @@ export default function CartIcon() {
     const toggleCart = () => setIsCartOpen(!isCartOpen)
 
     return(
-        <div classname='cart-icon-container'>
+        <div className='cart-icon-container'>
             <img onClick={toggleCart} width={'33px'} height={'33px'} style={{
                 position: 'relative',
                 cursor: 'pointer'
-            }} src={ShoppingCartIcon} classname='shopping-icon' alt='icon' />
+            }} src={ShoppingCartIcon} className='shopping-icon' alt='icon' />
             <span style={{
                 position: 'absolute',
                 top: '19px',
