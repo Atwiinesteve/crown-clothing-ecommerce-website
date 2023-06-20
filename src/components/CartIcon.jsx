@@ -13,7 +13,7 @@ import ShoppingCartIcon from '../assets/shopping-bag.svg';
 // cart component
 export default function CartIcon() {
 
-    const { isCartOpen, setIsCartOpen } = useContext(cartContext)
+    const { isCartOpen, setIsCartOpen, cartCount } = useContext(cartContext)
 
     const toggleCart = () => setIsCartOpen(!isCartOpen)
 
@@ -32,7 +32,7 @@ export default function CartIcon() {
                 justifyContent: 'center',
                 fontSize: '0.8rem',
                 cursor: 'pointer'
-            }} className='item-count'>0</span>
+            }} className='item-count'>{cartCount}</span>
         </div>
     )
 };

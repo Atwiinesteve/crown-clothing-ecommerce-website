@@ -1,12 +1,16 @@
 .cart-item-container {
     width: 100%;
     display: flex;
+    align-items: center;
+    justify-content: space-evenly;
     height: 80px;
     margin-bottom: 15px;
 }
   
-img {
-    width: 30%;
+img.pdt--img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
 }
   
 .item-details {
