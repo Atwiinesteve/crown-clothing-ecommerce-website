@@ -18,7 +18,7 @@ export default function CartItem({ cartItem }) {
             <img className='pdt--img' src={imageUrl} alt={`${name}` }/>
             <div className="item-details">
                 <span className="name">{name}</span>
-                <span className="price">{quantity} x {price}</span>
+                <p className="price">{quantity} x {price}</p>
             </div>
         </div>
     )
