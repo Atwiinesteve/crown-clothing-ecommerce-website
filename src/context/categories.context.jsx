@@ -9,13 +9,13 @@ import { getCategoriesAndDocuments } from "../utils/firebase/firebase.utils.js";
 // import SHOP_DATA from '../shop-data.js';
 
 // create context
-export const ProductsContext = createContext({
-    products: [],
+export const CategoriesContext = createContext({
+    categoriesMap: {},
 });
 
 // context provider
-export const ProductsProvider = ({ children }) => {
-    const [products, setProducts] = useState([]);
+export const CategoriesProvider = ({ children }) => {
+    const [categoriesMap, setCategoriesMap] = useState({});
 
     // adding data to firebase firestore
     // useEffect(() => {
@@ -26,13 +26,14 @@ export const ProductsProvider = ({ children }) => {
     useEffect(() => {
         const fetchCategories = async () => {
             const categoryMap = await getCategoriesAndDocuments();
-            console.log(categoryMap);
+            // console.log(categoryMap);
+            setCategoriesMap(categoryMap);
         }
         fetchCategories();
     }, [])
 
-    const value = {products}
+    const value = {categoriesMap}
     return (
-        <ProductsContext.Provider value={value}>{children}</ProductsContext.Provider>
+        <CategoriesContext.Provider value={value}>{children}</CategoriesContext.Provider>
     )
 }

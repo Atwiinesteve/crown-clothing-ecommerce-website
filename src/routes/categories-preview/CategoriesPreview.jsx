@@ -1,30 +1,25 @@
 // import react
 import React from 'react';
 
-// nested routes
-import {Routes, Route} from 'react-router-dom';
+// import dummy CONTEXT data
+import {useContext} from 'react';
 
-// // import dummy CONTEXT data
-// import {useContext} from 'react';
+// import components
+// import ProductCard from './ProductCard';
+import CategoryPreview from '../categories-preview/CategoriesPreview.jsx';
 
-// // import components
-// // import ProductCard from './ProductCard';
-// import CategoryPreview from './CategoryPreview';
-import CategoriesPreviewPage from '../routes/categories-preview/CategoriesPreview';
-
-// // products context
-// import { CategoriesContext } from '../context/categories.context';
+// products context
+import { CategoriesContext } from '../../context/categories.context.jsx';
 
 // import styles
-import "../styles/ProductCard.css";
-import CategoryPage from '../routes/category/Category';
+// import "../styles/ProductCard.css";
 
 // shop component
-const Shop = () => {
-    // const { categoriesMap } = useContext(CategoriesContext);
+const CategoriesPreviewPage = () => {
+    const { categoriesMap } = useContext(CategoriesContext);
   
     return (
-      <div className='shop-container'>
+      <div className='category-preview-container'>
 
         {/* { Object.keys(categoriesMap).map((title) => (
           < Fragment key={title}>
@@ -43,22 +38,17 @@ const Shop = () => {
           </Fragment>
         )) } */}
 
-        {/* {
+        {
           Object.keys(categoriesMap).map((title) => {
             const products = categoriesMap[title];
             return (
               <CategoryPreview key={title} title={title} products={products} />
             )
           })
-        } */}
-
-        <Routes>
-          <Route index element={<CategoriesPreviewPage />} />
-          <Route path=':category' element={<CategoryPage />} />
-        </Routes>
+        }
         
       </div>
     );
   };
   
-  export default Shop;
+  export default CategoriesPreviewPage;
