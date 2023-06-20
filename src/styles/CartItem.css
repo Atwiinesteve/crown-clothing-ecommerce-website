@@ -1,7 +1,8 @@
 .cart-item-container {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: left;
+    gap: 10px;
     height: 80px;
     margin-bottom: 15px;
 }
@@ -18,6 +19,7 @@ img.pdt--img {
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    margin: 0;
 }
 
 span.name {
