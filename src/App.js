@@ -7,6 +7,7 @@ import Home from './routes/home/home';
 import Navbar from './routes/navigation/navbar';
 import Signin from './components/Authentication';
 import Shop from './components/Shop';
+import Checkout from './routes/checkout/Checkout';
 
 const App = () => {
 	return (
@@ -15,6 +16,7 @@ const App = () => {
 				<Route index element={<Home />} />
 				<Route path="shop" element={<Shop/>} />
 				<Route path="sign-in" element={<Signin/>} />
+				<Route path="checkout" element={<Checkout/>} />
 			</Route>
 		</Routes>
 	);
