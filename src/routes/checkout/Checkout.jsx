@@ -3,33 +3,38 @@ import React, {useContext} from 'react';
 
 // import context
 import { cartContext } from '../../context/cart.context';
+import CheckoutItem from '../../components/CheckoutItem';
+
+// styles
+import "../checkout/checkout.css";
 
 // checkout page
 export default function Checkout() {
 
-    const {cartItems, addItemToCart, removeItemFromCart} = useContext(cartContext);
+    const {cartItems, cartTotal} = useContext(cartContext);
 
     return (
         <>
-            <p style={{marginTop: '10rem'}}>checkout page..</p>
-            <div>
-                { 
-                    cartItems.map((cartItem) =>{ 
-                        const {id, name, quantity} = cartItem;
-                        return (
-                            
-                                <div key={id}>
-                                    <h2>{name}</h2>
-                                    <h2>{quantity}</h2>
-                                    <br />
-                                    <span onClick={() => addItemToCart(cartItem)}>increment</span>
-                                    <br />
-                                    <span onClick={() => removeItemFromCart(cartItem)} >decrement</span>
-                                </div>
-                            
-                        )
-                    })
-                }
+            <div className="checkout-container">
+                <div className="checkout-header">
+                    <div className="header-block">
+                        <span>Product</span>
+                    </div>
+                    <div className="header-block">
+                        <span>Description</span>
+                    </div>
+                    <div className="header-block">
+                        <span>Quantity</span>
+                    </div>
+                    <div className="header-block">
+                        <span>Price</span>
+                    </div>
+                    <div className="header-block">
+                        <span>Remove</span>
+                    </div>
+                </div>
+                { cartItems.map((cartItem) => (<CheckoutItem key={cartItem.id} cartItem={cartItem} />)) }
+                <div className="total">Total: $ {cartTotal}</div>
             </div>
         </>
     )
