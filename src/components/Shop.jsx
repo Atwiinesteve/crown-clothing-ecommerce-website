@@ -1,64 +1,34 @@
 // import react
-import React from 'react';
+import React, {useContext} from 'react';
 
-// nested routes
-import {Routes, Route} from 'react-router-dom';
+// import context
+import { CategoriesContext } from '../context/categories.context';
 
-// // import dummy CONTEXT data
-// import {useContext} from 'react';
-
-// // import components
-// // import ProductCard from './ProductCard';
-// import CategoryPreview from './CategoryPreview';
-import CategoriesPreviewPage from '../routes/categories-preview/CategoriesPreview';
-
-// // products context
-// import { CategoriesContext } from '../context/categories.context';
+// import components
+import CategoryPreview from './CategoryPreview';
 
 // import styles
 import "../styles/ProductCard.css";
-import CategoryPage from '../routes/category/Category';
 
 // shop component
 const Shop = () => {
-    // const { categoriesMap } = useContext(CategoriesContext);
   
-    return (
-      <div className='shop-container'>
+  const {categoriesMap} = useContext(CategoriesContext);
 
-        {/* { Object.keys(categoriesMap).map((title) => (
-          < Fragment key={title}>
-            <h3>{title}</h3>
-            <div style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              columnGap: '10px',
-              rowGap: '50px',
-              marginTop: '90px'
-            }}>
-              { categoriesMap[title].map((product) => (
-                <ProductCard product={product} key={Math.random()} />
-              )) }
-            </div>
-          </Fragment>
-        )) } */}
+  return (
 
-        {/* {
-          Object.keys(categoriesMap).map((title) => {
-            const products = categoriesMap[title];
-            return (
-              <CategoryPreview key={title} title={title} products={products} />
-            )
-          })
-        } */}
-
-        <Routes>
-          <Route index element={<CategoriesPreviewPage />} />
-          <Route path=':category' element={<CategoryPage />} />
-        </Routes>
-        
+    <>
+      <div className="shop-container">
+        {Object.keys(categoriesMap).map((title)=> {
+          const products = categoriesMap[title];
+          return (
+            <CategoryPreview key={title} title={title} products={products} />
+          )
+        })}
       </div>
-    );
-  };
+    </>
+
+  );
+};
   
-  export default Shop;
+export default Shop;
