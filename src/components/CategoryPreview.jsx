@@ -8,7 +8,7 @@ import ProductCard from './ProductCard';
 import '../styles/CategoryPreview.css';
 
 // categories preview component
-export default function CategoryPreview({ title, products }) {
+const CategoryPreview = ({ title, products }) => {
     return (
         <>
             <div className="categor-preview-container">
@@ -23,4 +23,7 @@ export default function CategoryPreview({ title, products }) {
             </div>
         </>
     )
-}
+};
+
+// export
+export default CategoryPreview;
