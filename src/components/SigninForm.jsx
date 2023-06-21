@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 
 import {FormInput} from "../components/FormInput";
 import Button from "../components/Button";
@@ -34,7 +34,7 @@ const SignInForm = () => {
 		event.preventDefault();
 
 		try {
-			const {user} = await signInAuthUserWithEmailAndPassword(email,password);
+			// const {user} = await signInAuthUserWithEmailAndPassword(email,password);
 			resetFormFields();
 		} catch (error) {
 			switch (error.code) {
