@@ -15,7 +15,7 @@ import { CategoriesContext } from '../../context/categories.context.jsx';
 // import "../styles/ProductCard.css";
 
 // shop component
-const CategoriesPreviewPage = () => {
+const CategoriesPreview = () => {
     const { categoriesMap } = useContext(CategoriesContext);
   
     return (
@@ -51,4 +51,4 @@ const CategoriesPreviewPage = () => {
     );
   };
   
-  export default CategoriesPreviewPage;
+  export default CategoriesPreview;
