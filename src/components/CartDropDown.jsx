@@ -9,7 +9,7 @@ import { cartContext } from "../context/cart.context";
 // import Button from "./Button";
 
 // styles
-import '../styles/DropDown.css'
+import {cartDropDownContainer, cartItems, button } from '../styles/DropDown.jsx'
 import CartItem from "./CartItem";
 
 
@@ -21,13 +21,15 @@ export default function DropDownCard() {
         navigate('/checkout');
     }
     return (
-        <div className="cart-dropdown-container">
-            <div  className="cart-items">
-                { cartItems.map((cartItem) => (
-                    <CartItem key={cartItem.id} cartItem={cartItem} />
-                )) }
-            </div>
+        <cartDropDownContainer>
+            <cartItems>
+                { cartItems.length ? (
+                    cartItems.map((cartItem) => <CartItem key={cartItem.id} cartItem={cartItem} /> )
+                ) : (
+                    <span>You Cart is Empty..</span> 
+                ) }
+            </cartItems>
             <button onClick={goToCheckoutPage} >CHECKOUT</button>
-        </div>
+        </cartDropDownContainer>
     )
 };
