@@ -27,6 +27,13 @@ export const CartItems = styled.div`
 	margin: 0;
 `;
 
+export const CartEmptySpan = styled.span`
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin: auto;
+`;
+
 export const CartButton = styled.button`
 	margin-top: 30px;
 	padding: 0.78rem 1.1rem;

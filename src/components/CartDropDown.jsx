@@ -10,7 +10,7 @@ import { cartContext } from "../context/cart.context";
 import CartItem from "./CartItem";
 
 // styles
-import { CartDropDownContainer, CartItems, CartButton } from "../styles/DropDown";
+import { CartDropDownContainer, CartItems, CartEmptySpan, CartButton } from "../styles/DropDown";
 
 
 // drop down component
@@ -26,7 +26,7 @@ export default function DropDownCard() {
                 { cartItems.length ? (
                     cartItems.map((cartItem) => <CartItem key={cartItem.id} cartItem={cartItem} /> )
                 ) : (
-                    <span>You Cart is Empty..</span> 
+                    <CartEmptySpan>You Cart is Empty..</CartEmptySpan> 
                 ) }
             </CartItems>
             <CartButton onClick={goToCheckoutPage} >CHECKOUT</CartButton>
