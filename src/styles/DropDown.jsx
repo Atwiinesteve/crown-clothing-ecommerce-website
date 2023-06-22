@@ -1,7 +1,7 @@
 // imports
 import styled from 'styled-components';
 
-export const cartDropDownContainer = styled.div`
+export const CartDropDownContainer = styled.div`
 	position: absolute;
 	width: 260px;
 	height: 340px;
@@ -19,7 +19,7 @@ export const cartDropDownContainer = styled.div`
 	}
 `;
 
-export const cartItems = styled.div`
+export const CartItems = styled.div`
 	height: 250px;
 	display: flex;
 	flex-direction: column;
@@ -27,7 +27,7 @@ export const cartItems = styled.div`
 	margin: 0;
 `;
 
-export const button = styled.button`
+export const CartButton = styled.button`
 	margin-top: 30px;
 	padding: 0.78rem 1.1rem;
 	color: white;

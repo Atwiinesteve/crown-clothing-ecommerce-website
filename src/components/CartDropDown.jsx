@@ -7,10 +7,10 @@ import { cartContext } from "../context/cart.context";
 
 // components
 // import Button from "./Button";
+import CartItem from "./CartItem";
 
 // styles
-import {cartDropDownContainer, cartItems, button } from '../styles/DropDown.jsx'
-import CartItem from "./CartItem";
+import { CartDropDownContainer, CartItems, CartButton } from "../styles/DropDown";
 
 
 // drop down component
@@ -21,15 +21,15 @@ export default function DropDownCard() {
         navigate('/checkout');
     }
     return (
-        <cartDropDownContainer>
-            <cartItems>
+        <CartDropDownContainer>
+            <CartItems>
                 { cartItems.length ? (
                     cartItems.map((cartItem) => <CartItem key={cartItem.id} cartItem={cartItem} /> )
                 ) : (
                     <span>You Cart is Empty..</span> 
                 ) }
-            </cartItems>
-            <button onClick={goToCheckoutPage} >CHECKOUT</button>
-        </cartDropDownContainer>
+            </CartItems>
+            <CartButton onClick={goToCheckoutPage} >CHECKOUT</CartButton>
+        </CartDropDownContainer>
     )
 };
