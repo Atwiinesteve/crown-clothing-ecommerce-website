@@ -5,7 +5,16 @@ import {Routes, Route} from 'react-router-dom';
 import CategoriesPreview from '../routes/categories-preview/CategoriesPreview';
 
 // import styles
-import "../styles/ProductCard.css";
+// import "../styles/ProductCard.css";
+import {
+	ProductCardContainer,
+	ProductCardImage,
+	ProductCardButton,
+	ProductCardFooter,
+	ProductCardFooterName,
+	ProductCardFooterPrice,
+} from "../styles/ProductCard.jsx";
+
 import Category from '../routes/category/Category';
 
 // shop component

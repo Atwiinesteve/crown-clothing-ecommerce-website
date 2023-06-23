@@ -1,6 +1,6 @@
 // imports
 import styled from "styled-components";
-import ShoppingCartIcon from '../assets/shopping-bag.svg';
+import {ReactComponent as ShoppingCartIcon} from '../assets/shopping-bag.svg';
 
 export const CartIconContainer = styled.div`
     width: 50px;
