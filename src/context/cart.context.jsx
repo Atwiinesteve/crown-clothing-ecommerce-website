@@ -1,5 +1,5 @@
 // import react 
-import React, {createContext, useState, useEffect} from 'react';
+import React, {createContext, useState, useEffect, useReducer} from 'react';
 
 // add a single item to cart
 const addCartItem = (cartItems, productToAdd) => {
@@ -33,8 +33,20 @@ export const cartContext = createContext({
     removeItemFromCart: () => {},
     deleteItemFromCart: () => {},
     cartCount: 0,
-    cartTotal: 0
+    cartTotal: 0,
+    
 });
+
+
+// initial state
+const INITIAL_STATE = {
+    isCartOpen: false,
+    cartItems: [],
+    cartCount: 0,
+    cartTotal: 0
+}
+
+C
 
 // cart provider
 export const CartProvider = ({ children }) => {
@@ -64,7 +76,11 @@ export const CartProvider = ({ children }) => {
 
     const deleteItemFromCart = (cartItemToDelete) => {
         setCartItems(deleteCartItem(cartItems, cartItemToDelete))
-    }
+    };
+
+    // const setIsCartOpen = (bool) => {
+    //     dispatch({ type: "SET_IS_CART_OPEN", payload: bool })
+    // }
 
     const value = {isCartOpen, cartTotal, setIsCartOpen, addItemToCart, removeItemFromCart, deleteItemFromCart, cartItems, cartCount }
 
