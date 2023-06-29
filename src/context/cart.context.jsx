@@ -1,5 +1,5 @@
 // import react
-import React, { createContext, useState, useEffect, useReducer } from "react";
+import React, { createContext, useReducer } from "react";
 
 // add a single item to cart
 const addCartItem = (cartItems, productToAdd) => {
@@ -61,6 +61,10 @@ const CART_ITEMS_UPDATE = {
 	SET_CART_ITEMS: "SET_CART_ITEMS",
 };
 
+const SET_IS_CART_OPEN = {
+	IS_CART_OPEN: "IS_CART_OPEN",
+};
+
 const cartReducer = (state, action) => {
 	const { type, payload } = action;
 	switch (type) {
@@ -69,6 +73,8 @@ const cartReducer = (state, action) => {
 				...state,
 				...payload,
 			};
+		case SET_IS_CART_OPEN.IS_CART_OPEN:
+			return { ...state, isCartOpen: payload };
 		default:
 			throw new Error(`Invalid action ${type} in cartReducer..`);
 	}
@@ -78,7 +84,8 @@ const cartReducer = (state, action) => {
 
 // cart provider
 export const CartProvider = ({ children }) => {
-	const [{cartCount, cartTotal, cartItems, isCartOpen}, dispatch] = useReducer(cartReducer, INITIAL_STATE);
+	const [{ cartCount, cartTotal, cartItems, isCartOpen }, dispatch] =
+		useReducer(cartReducer, INITIAL_STATE);
 
 	const addItemToCart = (productToAdd) => {
 		const newCartItems = addCartItem(cartItems, productToAdd);
@@ -115,10 +122,14 @@ export const CartProvider = ({ children }) => {
 		});
 	};
 
+	const setIsCartOpen = (bool) => {
+		dispatch({ type: SET_IS_CART_OPEN.IS_CART_OPEN, payload: bool });
+	};
+
 	const value = {
 		isCartOpen,
 		cartTotal,
-		setIsCartOpen: () => {},
+		setIsCartOpen,
 		addItemToCart,
 		removeItemFromCart,
 		deleteItemFromCart,
