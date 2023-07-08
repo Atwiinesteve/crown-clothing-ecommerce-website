@@ -6,14 +6,14 @@ import CategoriesPreview from '../routes/categories-preview/CategoriesPreview';
 
 // import styles
 // import "../styles/ProductCard.css";
-import {
-	ProductCardContainer,
-	ProductCardImage,
-	ProductCardButton,
-	ProductCardFooter,
-	ProductCardFooterName,
-	ProductCardFooterPrice,
-} from "../styles/ProductCard.jsx";
+// import {
+// 	ProductCardContainer,
+// 	ProductCardImage,
+// 	ProductCardButton,
+// 	ProductCardFooter,
+// 	ProductCardFooterName,
+// 	ProductCardFooterPrice,
+// } from "../styles/ProductCard.jsx";
 
 import Category from '../routes/category/Category';
 
