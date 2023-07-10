@@ -3,6 +3,9 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter } from 'react-router-dom';
 import {UserProvider} from './context/user.context';
 import { Provider } from 'react-redux';
+import {Elements} from '@stripe/react-stripe-js';
+
+import { stripePromise } from './utils/stripe/stripe';
 import store from './store/store';
 
 import './index.css';
@@ -18,7 +21,9 @@ root.render(
         <UserProvider>
           <CategoriesProvider>
             <CartProvider>
-              <App />
+              <Elements stripe={stripePromise}>
+                <App />
+              </Elements>
             </CartProvider>
           </CategoriesProvider>
         </UserProvider>

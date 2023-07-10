@@ -7,6 +7,7 @@ import CheckoutItem from '../../components/CheckoutItem';
 
 // styles
 import "../checkout/checkout.css";
+import StripePaymentForm from '../../components/StripePaymentForm';
 
 // checkout page
 export default function Checkout() {
@@ -35,6 +36,7 @@ export default function Checkout() {
                 </div>
                 { cartItems.map((cartItem) => (<CheckoutItem key={cartItem.id} cartItem={cartItem} />)) }
                 <div className="total">Total: $ {cartTotal}</div>
+                <StripePaymentForm />
             </div>
         </>
     )

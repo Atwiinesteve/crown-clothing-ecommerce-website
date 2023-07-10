@@ -4,6 +4,8 @@ import React, {useContext} from 'react';
 // import context
 import {cartContext} from '../context/cart.context.jsx';
 
+// import components
+
 // styles
 import "../styles/CheckoutItem.css";
 
